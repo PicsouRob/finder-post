@@ -4,8 +4,8 @@ import { data } from '../Utils/infoData';
 function Info() {
     return (
         <div class="relative max-w-7xl mx-auto px-6 lg:px-8 py-20 space-y-16">
-            <div class="text-center space-y-2 flex flex-col">
-                <h1 class="font-bold text-2xl md:text-3xl lg:text-4xl">
+            <div class="space-y-2 flex flex-col">
+                <h1 class="font-semibold text-2xl md:text-3xl">
                     Comment trouver votre meilleur Embaucheurs
                 </h1>
                 <span class="text-[18px] md:text-xl">
@@ -20,8 +20,8 @@ function Info() {
                         >
                             { item.icon }
                         </div>
-                        <h3 class="font-semibold text-base md:text-[18px] group-hover:text-white">{ item.title }</h3>
-                        <span class="text-base text-gray-600">{ item.text }</span>
+                        <h3 class="font-semibold text-base group-hover:text-white">{ item.title }</h3>
+                        <span class="text-base">{ item.text }</span>
                     </div>
                 )) }
             </div>

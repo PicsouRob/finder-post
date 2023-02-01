@@ -6,6 +6,8 @@ import Footer from '../../Components/Footer';
 import Info from '../../Components/Info';
 import InputField from './InputField';
 import SearchCategories from './SearchCategories';
+import Services from './Services';
+import Testimonial from './Testimonial';
 
 function Home(props) {
     const [jobValue, setJobValue] = useState('');
@@ -49,6 +51,8 @@ function Home(props) {
             </div>
             <Info />
             <SearchCategories />
+            <Services />
+            <Testimonial />
             <div class="max-w-7xl px-6 mx-auto lg:px-8">
                 <div class="bg-[#0e1e25] rounded-lg mb-8  overflow-hidden">
                     <div class="flex flex-col md:flex-row items-center relative">
@@ -57,7 +61,7 @@ function Home(props) {
                                 Trouvez les talents nécessaires pour faire croître votre entreprise.
                             </h1>
                             <p class="text-[17px] text-white">Annoncez vos offres d'emploi à des millions d'utilisateurs mensuels et recherchez 15,8 millions de CV</p>
-                            <button class="bg-white rounded-lg font-semibold text-[14px] text-black py-3 hover:opacity-80 px-4">
+                            <button class="bg-white rounded-lg font-medium text-[14px] text-black py-3 hover:opacity-80 px-4">
                                 <span>Commencer</span>
                             </button>
                         </div>
