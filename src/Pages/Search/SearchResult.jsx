@@ -17,11 +17,11 @@ function SearchResult(props) {
 
     return (
         <div class="">
-            {data.length > 0 ? (<div class="my-8 grid gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+            {data.length > 0 ? (<div class="my-8 grid gap-x-5 gap-y-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
                 {data.reverse().map((item, index) => (
                     <div key={index}
                         onClick={() => openModal(item)}
-                        class="group shadow py-4 rounded-lg bg-gray-50 hover:bg-black cursor-pointer px-4"
+                        class="group border py-4 rounded-lg hover:bg-[#0e1e25] cursor-pointer px-4"
                     >
                         <div class="space-y-3">
                             <div class="flex space-x-3 items-center">
@@ -34,7 +34,7 @@ function SearchResult(props) {
                                 </div>
                                 <p class="font-medium group-hover:text-gray-500">{item.nameCreator}</p>
                             </div>
-                            <h4 class="font-medium group-hover:text-white text-[19px]">{item.job}</h4>
+                            <h4 class="font-medium group-hover:text-white text-[17px]">{item.job}</h4>
                             <p class="group-hover:text-gray-500">{substringDesc(item.description)}</p>
                         </div>
                         <hr class="my-3" />

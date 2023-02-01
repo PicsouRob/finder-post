@@ -15,18 +15,18 @@ function Header({ user }) {
     const { showScroll } = useScrollToTop();
 
     return (
-        <div class={`${showScroll ? "fixed shadow-md" : "relative"} w-full py-3 bg-white z-20`} id="outer-container">
+        <div class={`${showScroll ? "fixed shadow- bg-white z-20" : "relative bg-[#0e1e25] border-b-gray-700"} w-full py-3 z-20 border-b`} id="outer-container">
             <div class="flex items-center justify-between max-w-7xl px-6 mx-auto lg:px-8">
                 <LogoLink />
                 <div class="flex gap-x-8 md:gap-x-16 items-center">
-                    <div class="hidden md:flex md:gap-x-8">
+                    <div class={ `${showScroll ? "text-black" : "text-white" } hidden md:flex md:gap-x-8` }>
                         {menu.map(({ title, to, state }, index) => (
                             <NavLink to={to} state={{ jobValue: '', cityValue: 'Ville' }}
                                 class="cursor-pointer"
                                 activeStyle={{ color: "#ff7a59" }}
                                 key={index}
                             >
-                                <span class="transition text-black font-sans hover:text-red-900">{title}</span>
+                                <span class="transition text-[14px] font-sans hover:text-red-900">{title}</span>
                             </NavLink>
                         ))}
                     </div>
@@ -46,9 +46,9 @@ function Header({ user }) {
                             />
                         </div>
                     ) : (
-                        <div class="flex gap-x-0 md:gap-x-6 font-sans">
+                        <div class={ `${showScroll ? "text-black" : "text-white" } flex gap-x-0 md:gap-x-6 font-sans text-[14px]`}>
                             <Link to="/auth/login"
-                                class="p-2 border-1 rounded-md"
+                                class="p-2 block border-1 rounded-md"
                             >Se Connecter</Link>
                             <Link to="auth/register"
                                 class="hidden md:block p-2 border-1 rounded-md"

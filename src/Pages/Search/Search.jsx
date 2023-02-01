@@ -77,7 +77,7 @@ function Search() {
                     />
                 </div>
             </div>
-            <div class="py-8 px-6 md:px-28 bg-green-50">
+            <div class="py-8 max-w-7xl px-6 mx-auto lg:px-8">
                 <div class="flex justify-between items-center">
                     <span class="text-base text-gray-800">{data.length} Freelance Trouvées</span>
                     <div class="flex justify-between items-center border rounded-lg px-3 py-2">

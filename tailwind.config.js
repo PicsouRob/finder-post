@@ -13,7 +13,8 @@ module.exports = {
         backgroundImage: {
           // 'sign': "url('/img/sign.jpg')"
         },
-        colors : {
+        colors: {
+            principal: "#0e1e25",
           gray : {
             50: '#F9FAFB',
             300: '#F1F1F1',
