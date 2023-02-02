@@ -55,7 +55,7 @@ function Header({ user }) {
                             >Se Connecter</Link>
                         </div>
                     ) }
-                    <MenuBurger />
+                    <MenuBurger showScroll={showScroll} />
                 </div>
             </div>
         </div>

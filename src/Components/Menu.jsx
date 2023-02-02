@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 
 import SocialMedia from './SocialMedia';
 
-function MenuBurger() {
+function MenuBurger({ showScroll }) {
     const [isOpen, setIsOpen] = useState(false);
     const handleKeyPress = useCallback((e) => {
         e = e || window.event;
@@ -28,7 +28,7 @@ function MenuBurger() {
                 isOpen={isOpen}
                 styles={styles}
                 customBurgerIcon={<div >
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg xmlns="http://www.w3.org/2000/svg" class={`${showScroll ? "text-black" : "text-white" } h-6 w-6`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                     </svg>
                 </div>}

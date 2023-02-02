@@ -35,14 +35,14 @@ function InputField(props) {
                 </select>
                 <Link to="/api/job/find"
                     state={{ jobValue: '', cityValue: 'Ville' }}
-                    class="hidden md:block bg-[#0e1e25] px-3 py-2 text-white hover:bg-green-500 shadow-md text-[14px]"
+                    class="hidden md:block bg-principal px-3 py-2 text-white hover:bg-secondary shadow-md text-[14px]"
                 >
                     Rechercher
                 </Link>
             </div>
             <Link to="/api/job/find"
                 state={{ jobValue: '', cityValue: 'Ville' }}
-                class="mt-3 block md:hidden bg-sky-500 rounded-lg px-3 py-2 text-white hover:bg-green-500 shadow-md w-full"
+                class="mt-3 block md:hidden bg-[#3e7a68] rounded-sm px-3 py-2 text-white hover:bg-secondary shadow-md w-full text-center"
             >
                 Rechercher
             </Link>
