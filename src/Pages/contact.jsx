@@ -6,6 +6,7 @@ import * as Yup from 'yup';
 import Header from '../Components/Header';
 import Footer from '../Components/Footer';
 import SocialMedia from '../Components/SocialMedia';
+import { contactData } from '../Utils/data';
 
 const validation = Yup.object().shape({
     name: Yup.string().required("Votre Nom est obligatoire"),
@@ -43,83 +44,101 @@ function Contact() {
     return (
         <div>
             <Header />
-            <div class="relative bg-[#0e1e25] w-full">
-                <div class="flex flex-col md:flex-row md:justify-between items-center gap-x-10 gap-y-16 px-6 md:px-8 min-h-screen min-w-7xl mx-auto py-24 md:py-0">
-                    <div class="w-full md:w-1/2">
-                        <div class="pb-3">
-                            <h1 class="text-3xl md:text-3xl font-bold text-white pb-3">Contacter Nous</h1>
-                            <span class="text-gray-500">Pour demander un avis ou obtenir des informations sur notre société, contactez-nous directement ou remplissez le formulaire et nous vous répondrons dans les plus brefs délais.</span>
-                        </div>
-                        <div>
-                            <div class="flex my-3 h-10 gap-x-3 w-full md:w-3/5">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                                </svg>
-                                <span class="text-gray-400">+1 809 429 8594</span>
-                            </div>
-                            <div class="flex my-3 h-10 gap-x-3 cursor-pointer w-full md:w-3/5"
-                                onClick={() => window.open('mailto:finderht@gmail.com?subject=Services&body=Salut Roberto')}
-                            >
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                                </svg>
-                                <span class="text-gray-400">finderht@gmail.com</span>
-                            </div>
-                            <div class="flex my-3 h-10 gap-x-3 cursor-pointer  w-full md:w-3/5"
-                                onClick={() => window.open('tel:+18094298594')}
-                            ><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                                </svg>
-                                <span class="text-gray-400">102 Street Saint-Marc</span>
+            <div class="relative w-full">
+                <div className="max-w-7xl mx-auto">
+                    <div className="">
+                        <div className="bg-principal md:rounded-lg md:mt-8 lg:mt-12 text-white py-8 px-6 lg:py-16 space-y-2 md:mx-8">
+                            <div className="w-full md:w-1/2">
+                                <h1 className="font-bold text-2xl lg:text-3xl leading-8 pb-2">Contactez-nous</h1>
+                                <p className="text-white text-base lg:pr-10">Nous serions ravis de discuter de la manière dont nous pouvons vous aider.</p>
                             </div>
                         </div>
-                        <SocialMedia color="#fff" />
+                        <div className="px-6 md:px-8">
+                            <div class="grid md:grid-cols-2 gap-x-10 gap-y-12 py-12 md:px-12">
+                                <div class="w-full">
+                                    <div class="pb-3">
+                                        <h1 class="text-2xl md:text-3xl font-bold pb-3">Restez en contact avec nous.</h1>
+                                        <span class="">Pour demander un avis ou obtenir des informations sur notre société, contactez-nous directement ou remplissez le formulaire et nous vous répondrons dans les plus brefs délais.</span>
+                                    </div>
+                                    <div className='flex flex-col space-y-8 pt-4'>
+                                        { contactData.map((data, ind) => (
+                                            <div key={ ind }
+                                                class="flex items-center my-3 h-10 gap-x-4 w-full cursor-pointer"
+                                                onClick={ () => {
+                                                    data.open != '' ? document.open(data.open) : {}
+                                                }}
+                                            >
+                                                <img src={`/images/contact${ind+1}.png`} alt={ data.title } className="w-12 h-10" />
+                                                <div className="space-y-3">
+                                                    <h1 className="font-medium leading-8">{ data.title }</h1>
+                                                    <span class="">{ data.text }</span>
+                                                </div>
+                                            </div>
+                                        ))}
+                                    </div>
+                                    <SocialMedia color="#fff" />
+                                </div>
+                                <div className="w-full md:shadow-md rounded-md p-4 border space-y-7 divide-y md:-mt-36 bg-white">
+                                    <div className="space-y-3">
+                                        <h1 className="font-semibold text-2xl">Parlez nous de vous</h1>
+                                        <p className="text-base">Que vous ayez des questions ou que vous souhaitiez simplement dire bonjour, contactez-nous.</p>
+                                    </div>
+                                    <div className="pt-4">
+                                        <Formik className=""
+                                            initialValues={{ name: '', email: '', message: '' }}
+                                            validationSchema={validation}
+                                            onSubmit={(values) => handleSubmitEmail(values)}
+                                        >
+                                            {({ values, errors, handleSubmit, handleChange, touched }) => (
+                                                <form class="w-full" onSubmit={ handleSubmit }>
+                                                    <div className="grid lg:grid-cols-2 gap-y-4 gap-x-5">
+                                                        <div className="">
+                                                            <label class="font-medium">Nom et Prénom</label>
+                                                            <input type="text" name="name"
+                                                                value={values.name}
+                                                                onChange={handleChange}
+                                                                placeholder="Entrez votre nom complet"
+                                                                class="px-3 py-3 w-full text-[15px] text-black placeholder:text-gray-600 focus:outline-none font-light border focus:ring-0 my-2 rounded-lg"
+                                                            />
+                                                            {errors.name && touched.name && (
+                                                                <p class="text-red-700">{errors.name}</p>
+                                                            )}
+                                                        </div>
+                                                        <div className="">
+                                                            <label class="font-medium">Courrier électronique</label>
+                                                            <input type="text" name="email"
+                                                                value={values.email}
+                                                                onChange={handleChange} placeholder="Entrez votre courrier"
+                                                                class="px-3 py-3 w-full text-[15px] placeholder:text-gray-600 focus:outline-none font-light border focus:ring-0 my-2 rounded-lg"
+                                                            />
+                                                            {errors.email && touched.email && (
+                                                                <p class="text-red-700">{errors.email}</p>
+                                                            )}
+                                                        </div>
+                                                    </div>
+                                                    <label class="pt-3 font-medium">Message</label>
+                                                    <textarea name="message"
+                                                        value={values.message} onChange={handleChange}
+                                                        placeholder="Entrez votre message"
+                                                        class="px-4 pt-2 placeholder:text-gray-600 w-full focus:outline-none border focus:ring-0 text-[15px] my-2 rounded-lg resize-y h-60"
+                                                    ></textarea>
+                                                    {errors.message && touched.message && (
+                                                        <p class="text-red-700">{errors.message}</p>
+                                                    )}
+                                                    <button type="submit"
+                                                        class="flex items-center justify-center gap-x-2 w-full sm:w-40 bg-[#198754] rounded-md px-12 py-2.5 text-white font-medium mt-3 hover:bg-principal" disabled={isLoading}
+                                                    >
+                                                        {isLoading && <i class="fa fa-spinner fa-spin"></i>}
+                                                        Envoyer
+                                                    </button>
+                                                </form>
+                                            )}
+                                        </Formik>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <Formik class
-                        initialValues={{ name: '', email: '', message: '' }}
-                        validationSchema={validation}
-                        onSubmit={(values) => handleSubmitEmail(values)}
-                    >
-                        {({ values, errors, handleSubmit, handleChange, touched }) => (
-                            <form class="w-full md:w-1/2" onSubmit={handleSubmit}>
-                                <label class="text-white">Nom et Prénom</label>
-                                <input type="text" name="name"
-                                    value={values.name}
-                                    onChange={handleChange}
-                                    placeholder="Entrez votre nom complet"
-                                    class="px-4 py-3 w-full focus:outline-none font-light border-0 focus:ring-0 my-2 rounded-lg shadow-sm"
-                                />
-                                {errors.name && touched.name && (
-                                    <p class="text-red-700">{errors.name}</p>
-                                )}
-                                <label class="pt-2 text-white">Courrier électronique</label>
-                                <input type="text" name="email"
-                                    value={values.email}
-                                    onChange={handleChange} placeholder="Entrez votre courrier"
-                                    class="px-4 py-3 w-full focus:outline-none font-light border-0 focus:ring-0 my-2 rounded-lg shadow-sm"
-                                />
-                                {errors.email && touched.email && (
-                                    <p class="text-red-700">{errors.email}</p>
-                                )}
-                                <label class="pt-2 text-white">Message</label>
-                                <textarea name="message"
-                                    value={values.message} onChange={handleChange}
-                                    placeholder="Entrez votre message"
-                                    class="px-4 pt-2 w-full focus:outline-none font-light border-0 focus:ring-0 my-2 rounded-lg shadow-sm resize-y h-28"
-                                ></textarea>
-                                {errors.message && touched.message && (
-                                    <p class="text-red-700">{errors.message}</p>
-                                )}
-                                <button type="submit"
-                                    class="flex items-center justify-center gap-x-2 w-full sm:w-40 bg-red-500 rounded-lg px-12 py-2.5 text-white font-medium mt-3 hover:bg-green-500 shadow-lg" disabled={isLoading}
-                                >
-                                    {isLoading && <i class="fa fa-spinner fa-spin"></i>}
-                                    Envoyer
-                                </button>
-                            </form>
-                        )}
-                    </Formik>
                 </div>
             </div>
             <Footer />

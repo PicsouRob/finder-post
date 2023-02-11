@@ -25,6 +25,24 @@ export const substringDesc = (text) => {
     }
 }
 
+export const contactData = [
+    {
+        title: "Téléphone",
+        text: "+1 809 429 8594",
+        open: "",
+    },
+    {
+        title: "E-mail",
+        text: "finderht@gmail.com",
+        open: "mailto:finderht@gmail.com?subject=Services&body=Salut Roberto",
+    },
+    {
+        title: "Adresse",
+        text: "102 Street Saint-Marc",
+        open: "tel:+18094298594",
+    },
+];
+
 export const categories = [
     {
         title: 'Communication marketing',

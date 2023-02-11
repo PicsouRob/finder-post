@@ -17,7 +17,7 @@ function Header({ user }) {
     return (
         <div class={ `${ showScroll ? "fixed shadow- bg-white z-20" : "relative bg-[#0e1e25] border-b-gray-700" } w-full py-3 z-20 border-b` } id="outer-container">
             <div class="flex items-center justify-between max-w-7xl px-6 mx-auto lg:px-8">
-                <LogoLink />
+                <LogoLink showScroll={showScroll} />
                 <div class="flex gap-x-8 md:gap-x-16 items-center">
                     <div class={ `${ showScroll ? "text-black" : "text-white" } hidden md:flex md:gap-x-8` }>
                         { menu.map(({ title, to, state }, index) => (

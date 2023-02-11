@@ -20,7 +20,8 @@ function Search() {
     const [showModal, setShowModal] = useState(false);
     const [showImages, setShowImages] = useState(false);
     const [imagesIndex, setImagesIndex] = useState(0);
-    const [imagesData, setImagesData] = useState([]);
+    const [ imagesData, setImagesData ] = useState([]);
+    const font = '/images/slider1.jpg';
 
     useEffect(() => {
         axios.get(`/api/stuff`).then((res) => {
@@ -66,10 +67,15 @@ function Search() {
     return (
         <div>
             <Header />
-            <div class="py-20 lg:py-24 px-6 md:px-28 bg-[#0e1e25] flex items-center justify-center">
+            <div
+                class="py-20 lg:py-24 px-6 md:px-28 flex items-center justify-center bg-cover bg-bottom object-cover h-[550px]"
+                style={ {
+                    background: `linear-gradient(rgba(0, 0, 0, 40%), rgba(0, 0, 0, 0.4)), url(${font}) no-repeat`,
+                }}
+            >
                 <div className="w-1/2 space-y-3">
-                    <h2 class="text-3xl md:text-5xl font-bold text-white pb-2 md:pb-0 text-center">Trouver un professionnel</h2>
-                    <p class="text-center font-medium text-lg text-gray-400">Trouvez votre professionnel pour votre travail et obtenez satisfaction</p>
+                    <h2 class="text-3xl md:text-3xl font-bold text-white pb-2 md:pb-0 text-center">Trouver un professionnel</h2>
+                    <p class="text-center text-lg text-gray-400">Trouvez votre professionnel pour votre travail et obtenez satisfaction</p>
                     <SearchInput location={location} value={value}
                         setValue={setValue} setLocation={setLocation}
                         setData={setData} data={data}
@@ -77,26 +83,32 @@ function Search() {
                     />
                 </div>
             </div>
-            <div class="py-8 max-w-7xl px-6 mx-auto lg:px-8">
-                <div class="flex justify-between items-center">
-                    <span class="text-base text-gray-800">{data.length} Freelance Trouvées</span>
-                    <div class="flex justify-between items-center border rounded-lg px-3 py-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
-                        </svg>
-                        <select id="select-ville" onChange={(e) => selectFilter(e)}
-                            class="bg-transparent w-24 md:w-auto"
-                        >
-                            <option value="Tout" selected>Tout</option>
-                            <option value="Les plus recherchés">Les plus recherchés</option>
-                            <option value="Les plus populaire">Les plus populaires</option>
-                        </select>
+            <div class="">
+                <div className="bg-green-50">
+                    <div className="py-4 max-w-7xl px-6 mx-auto lg:px-8">
+                        <div class="flex justify-between items-center">
+                            <span class="text-base text-gray-800">{data.length} Freelance Trouvées</span>
+                            <div class="flex justify-between items-center border rounded-lg px-3 py-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+                                </svg>
+                                <select id="select-ville" onChange={(e) => selectFilter(e)}
+                                    class="bg-transparent w-24 md:w-auto"
+                                >
+                                    <option value="Tout" selected>Tout</option>
+                                    <option value="Les plus recherchés">Les plus recherchés</option>
+                                    <option value="Les plus populaire">Les plus populaires</option>
+                                </select>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <SearchResult location={location} value={value}
-                    setShowModal={setShowModal} showModal={showModal}
-                    setModalData={setModalData} data={data}
-                />
+                <div className="max-w-7xl px-6 mx-auto lg:px-8">
+                    <SearchResult location={location} value={value}
+                        setShowModal={setShowModal} showModal={showModal}
+                        setModalData={setModalData} data={data}
+                    />
+                </div>
             </div>
             <Modal showModal={showModal} setShowModal={setShowModal}
                 modalData={modalData}
