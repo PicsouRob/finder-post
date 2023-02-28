@@ -4,7 +4,7 @@ import Google from '../../icons/google.svg';
 import Facebook from '../../icons/facebook.svg';
 
 function SignTop({ title, text }) {
-    return <div class="">
+    return <div class="text-center">
         <h1 class="text-3xl font-bold tracking-wide leading-loose writespace-nowrap">
             {title}
         </h1>

@@ -6,8 +6,8 @@ import signImages from '../../Images/sign.jpg';
 
 function SignLeft() {
     return (
-        <div class="hidden lg:block relative w-full lg:self-start bg-cover bg-no-repeat bg-center min-h-full lg:flex-1"
-            style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 85%), rgba(0, 0, 0, 0.8)),url(${signImages})` }}
+        <div class="hidden lg:block relative w-full lg:self-start bg-cover bg-no-repeat lg:flex-1 h-screen"
+            style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 65%), rgba(0, 0, 0, 0.6)),url(${signImages})` }}
         >
             <div class="absolute top-64 flex items-center justify-center w-full">
                 <div class="max-w-md text-center">

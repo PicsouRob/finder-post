@@ -50,11 +50,11 @@ const FooterContent = ({ data, title }) => {
     return (
         <div class="">
             <h1 class="font-semibold text-[15px] text-white mb-4">{ title }</h1>
-            <div class="space-y-3">
+            <div class="space-y-3 flex flex-col">
                 { data.map((data, index) => (
-                    <div key={index} class="text-gray-500 text-[14x] cursor-pointer hover:text-white">
+                    <Link to={data.link} key={index} class="text-gray-500 text-[14x] cursor-pointer hover:text-white">
                         <span class="">{ data.title }</span>
-                    </div>
+                    </Link>
                 ))}
             </div>
         </div>  

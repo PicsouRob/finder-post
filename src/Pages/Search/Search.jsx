@@ -84,7 +84,7 @@ function Search() {
                 </div>
             </div>
             <div class="">
-                <div className="bg-green-50">
+                <div className="bg-gray-50">
                     <div className="py-4 max-w-7xl px-6 mx-auto lg:px-8">
                         <div class="flex justify-between items-center">
                             <span class="text-base text-gray-800">{data.length} Freelance Trouvées</span>

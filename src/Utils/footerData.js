@@ -21,7 +21,7 @@ export const about = [
     },
     {
         title: "Conditions d'utilisation",
-        link: ""
+        link: "/terms-and-conditions"
     },
 ];
 

@@ -47,10 +47,10 @@ function Header({ user }) {
                         </div>
                     ) : (
                         <div class={ `${ showScroll ? "text-black" : "text-white" } flex gap-x-0 md:gap-x-6 font-sans text-[14px]` }>
-                            <Link to="auth/register"
+                            <Link to="/auth/login"
                                 class="hidden md:block p-2 rounded-md hover:text-gray-500"
                             >S'inscrire</Link>
-                            <Link to="/auth/login"
+                            <Link to="/auth/register"
                                 class="p-2 block border-1 rounded-md hover:text-gray-500"
                             >Se Connecter</Link>
                         </div>

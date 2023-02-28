@@ -21,4 +21,9 @@ export const aboutData = [
         title: 'Recherchez le freelance parfait',
         text: 'Parcourez les profils de Freelancer.Comparez les propositions et sélectionnez la meilleure. Contacter votre Freelancer pour votre boulot.',
     },
+    {
+        id: 3,
+        title: 'Payez en toute sécurité',
+        text: "C'est gratuit et facile de publier une offre d'emploi. Remplissez simplement un titre, une description.",
+    },
 ]; 

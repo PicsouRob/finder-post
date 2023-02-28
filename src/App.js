@@ -17,7 +17,9 @@ import HelpInfo from './Pages/Help/HelpInfo';
 import AddJob from './Pages/AddJob';
 import Update from './Pages/Update/Update';
 import UpdateJob from './Pages/Update/UpdateJob';
+
 import * as actions from './actions';
+import Terms from './Pages/Terms';
 
 function App(props) {
     const [isLoad, setIsLoad] = useState(true);
@@ -50,6 +52,7 @@ function App(props) {
                 <Route path="/help_post" element={<HelpInfo />} />
                 <Route path="/api/job/add" element={<AddJob  />} />
                 <Route path="/api/user/:id/update-profil" element={<Update  />} />
+                <Route path="/terms-and-conditions" element={<Terms  />} />
                 <Route path="/api/user/:id/update-job" element={<UpdateJob  />} />
                 <Route path="*" element={<NotFound />} />
               </Routes>
